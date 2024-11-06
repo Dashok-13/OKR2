@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\bin\Debug\Visual_Calculator.exe.config
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\bin\Debug\Visual_Calculator.exe
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\bin\Debug\Visual_Calculator.pdb
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.FrmCalculator.resources
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.Properties.Resources.resources
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.exe
+C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.pdb
