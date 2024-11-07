@@ -27,17 +27,18 @@ namespace Visual_Calculator
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (result != 0) btnEnter.PerformClick();
-            else result = Double.Parse(textBox1.Text);
+            if (enterValue)
+            {
+                btnEnter.PerformClick();
+            }
+            result = Double.Parse(textBox1.Text);
 
             Button button = (Button)sender;
             operation = button.Text;
             enterValue = true;
-            if (textBox1.Text != "0")
-            {
-                textBox2.Text = fstNum = $"{result}{operation}";
-                textBox1.Text = string.Empty;
-            }
+
+            textBox2.Text = fstNum = $"{result}{operation}";
+            textBox1.Text = string.Empty;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -47,7 +48,13 @@ namespace Visual_Calculator
 
             if (textBox1.Text != string.Empty)
             {
-                if (textBox1.Text == "0") textBox2.Text = string.Empty;
+                if (textBox1.Text == "0" && operation == "/")
+                {
+                    textBox1.Text = "Error!";
+                    textBox2.Text = string.Empty;
+                    return;
+                }
+
                 switch (operation)
                 {
                     case "+":
@@ -55,11 +62,9 @@ namespace Visual_Calculator
                         break;
                     case "-":
                         textBox1.Text = (result - Double.Parse(textBox1.Text)).ToString();
-
                         break;
                     case "X":
                         textBox1.Text = (result * Double.Parse(textBox1.Text)).ToString();
-
                         break;
                     case "/":
                         if (Double.Parse(textBox1.Text) == 0)
@@ -70,22 +75,19 @@ namespace Visual_Calculator
                         }
                         textBox1.Text = (result / Double.Parse(textBox1.Text)).ToString();
                         break;
-
-                    default:
-                        textBox2.Text = $"{textBox1.Text}";
-                        break;
                 }
+
                 result = Double.Parse(textBox1.Text);
                 operation = string.Empty;
             }
-
         }
+
 
         private void btnBackSpace_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Length > 0)
                 textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
-            if (textBox1.Text == string.Empty) textBox1.Text = "0";
+            if (textBox1.Text == string.Empty) textBox1.Text = "";
 
         }
 
@@ -96,18 +98,37 @@ namespace Visual_Calculator
             result = 0;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.StartsWith("-"))
+                textBox1.Text = textBox1.Text.Substring(1);
+            else if (textBox1.Text != "0")
+                textBox1.Text = "-" + textBox1.Text;
+        }
+
         private void btn7_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || enterValue) textBox1.Text = string.Empty;
+            Button button = (Button)sender;
+
+            if (textBox1.Text == "0" && button.Text != ".")
+            {
+                textBox1.Text = button.Text;
+            }
+            else
+            {
+                if (button.Text == ".")
+                {
+                    if (!textBox1.Text.Contains("."))
+                        textBox1.Text += button.Text;
+                }
+                else
+                {
+                    textBox1.Text += button.Text;
+                }
+            }
 
             enterValue = false;
-            Button button = (Button)sender;
-            if (button.Text == ".")
-            {
-                if (!textBox1.Text.Contains("."))
-                    textBox1.Text = textBox1.Text + button.Text;
-            }
-            else textBox1.Text = textBox1.Text + button.Text;
         }
+
     }
 }
