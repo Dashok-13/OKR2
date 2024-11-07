@@ -15,11 +15,16 @@ namespace Visual_Calculator
 
     public partial class FrmCalculator : Form
     {
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> origin/dev
         public FrmCalculator()
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
         Double result = 0;
         string operation = string.Empty;
         string fstNum, secNum;
@@ -131,4 +136,9 @@ namespace Visual_Calculator
         }
 
     }
+=======
+    }
+
+    
+>>>>>>> origin/dev
 }

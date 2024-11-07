@@ -8,6 +8,7 @@ C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visua
 C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.exe
 C:\Users\User\Desktop\Spint1\Visual_Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.pdb
+<<<<<<< HEAD
 C:\Users\Oleksandr\Desktop\Calculator\Visual_Calculator\bin\Debug\Visual_Calculator.exe.config
 C:\Users\Oleksandr\Desktop\Calculator\Visual_Calculator\bin\Debug\Visual_Calculator.exe
 C:\Users\Oleksandr\Desktop\Calculator\Visual_Calculator\bin\Debug\Visual_Calculator.pdb
@@ -18,3 +19,5 @@ C:\Users\Oleksandr\Desktop\Calculator\Visual_Calculator\obj\Debug\Visual_Calcula
 C:\Users\Oleksandr\Desktop\Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.CoreCompileInputs.cache
 C:\Users\Oleksandr\Desktop\Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.exe
 C:\Users\Oleksandr\Desktop\Calculator\Visual_Calculator\obj\Debug\Visual_Calculator.pdb
+=======
+>>>>>>> origin/dev
