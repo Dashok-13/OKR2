@@ -22,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Oleksandr\\Desktop\\Calculator\\Visual_Calculator\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Visual_Calculator\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\Oleksandr\\Desktop\\Calculator\\Visual_Calculator\\Form1.Designer.cs",
-              "RelativeToolTip": "Visual_Calculator\\Form1.Designer.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAEwEcAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T18:47:30.699Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -45,7 +32,7 @@
               "RelativeDocumentMoniker": "Visual_Calculator\\Form1.cs",
               "ToolTip": "C:\\Users\\Oleksandr\\Desktop\\Calculator\\Visual_Calculator\\Form1.cs",
               "RelativeToolTip": "Visual_Calculator\\Form1.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAiwGkAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAwwH4AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T18:47:23.092Z",
               "EditorCaption": ""
@@ -61,6 +48,19 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T18:46:16.909Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Oleksandr\\Desktop\\Calculator\\Visual_Calculator\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Visual_Calculator\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Oleksandr\\Desktop\\Calculator\\Visual_Calculator\\Form1.Designer.cs",
+              "RelativeToolTip": "Visual_Calculator\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T18:47:30.699Z",
+              "EditorCaption": ""
             }
           ]
         }

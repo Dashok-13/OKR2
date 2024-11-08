@@ -15,35 +15,30 @@ namespace Visual_Calculator
 
     public partial class FrmCalculator : Form
     {
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> origin/dev
         public FrmCalculator()
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
         Double result = 0;
         string operation = string.Empty;
         string fstNum, secNum;
         bool enterValue = false;
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void AdditionButton(object sender, EventArgs e)
         {
-            if (enterValue)
-            {
-                btnEnter.PerformClick();
-            }
-            result = Double.Parse(textBox1.Text);
+            if (result != 0) btnEnter.PerformClick();
+            else result = Double.Parse(textBox1.Text);
 
             Button button = (Button)sender;
             operation = button.Text;
             enterValue = true;
+            if (textBox1.Text != "0")
+            {
+                textBox2.Text = fstNum = $"{result}{operation}";
+                textBox1.Text = string.Empty;
+            }
 
-            textBox2.Text = fstNum = $"{result}{operation}";
-            textBox1.Text = string.Empty;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -53,46 +48,62 @@ namespace Visual_Calculator
 
             if (textBox1.Text != string.Empty)
             {
-                if (textBox1.Text == "0" && operation == "/")
+                if (textBox1.Text == "0") textBox2.Text = string.Empty;
+
+                try
+                {
+                    double num = Double.Parse(textBox1.Text);
+
+                    switch (operation)
+                    {
+                        case "+":
+                            textBox1.Text = (result + num).ToString();
+                            break;
+                        case "-":
+                            textBox1.Text = (result - num).ToString();
+                            break;
+                        case "×":
+                            textBox1.Text = (result * num).ToString();
+                            break;
+                        case "÷":
+                            if (num == 0)
+                            {
+                                textBox1.Text = "Error!";
+                                textBox2.Text = string.Empty;
+                                return;
+                            }
+                            textBox1.Text = (result / num).ToString();
+                            break;
+                        default:
+                            textBox2.Text = $"{textBox1.Text}";
+                            break;
+                    }
+                    result = Double.Parse(textBox1.Text);
+                }
+                catch (FormatException)
+                {
+                    textBox1.Text = "Invalid input!";
+                    textBox2.Text = string.Empty;
+                }
+                catch (Exception ex)
                 {
                     textBox1.Text = "Error!";
                     textBox2.Text = string.Empty;
-                    return;
+                    Console.WriteLine(ex.Message);
                 }
 
-                switch (operation)
-                {
-                    case "+":
-                        textBox1.Text = (result + Double.Parse(textBox1.Text)).ToString();
-                        break;
-                    case "-":
-                        textBox1.Text = (result - Double.Parse(textBox1.Text)).ToString();
-                        break;
-                    case "X":
-                        textBox1.Text = (result * Double.Parse(textBox1.Text)).ToString();
-                        break;
-                    case "/":
-                        if (Double.Parse(textBox1.Text) == 0)
-                        {
-                            textBox1.Text = "Error!";
-                            textBox2.Text = string.Empty;
-                            return;
-                        }
-                        textBox1.Text = (result / Double.Parse(textBox1.Text)).ToString();
-                        break;
-                }
-
-                result = Double.Parse(textBox1.Text);
                 operation = string.Empty;
             }
+
+
+
         }
 
-
-        private void btnBackSpace_Click(object sender, EventArgs e)
+        private void RemoveLastChar(object sender, EventArgs e)
         {
             if (textBox1.Text.Length > 0)
                 textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
-            if (textBox1.Text == string.Empty) textBox1.Text = "";
+            if (textBox1.Text == string.Empty) textBox1.Text = "0";
 
         }
 
@@ -103,7 +114,12 @@ namespace Visual_Calculator
             result = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnPlusMinus_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.StartsWith("-"))
                 textBox1.Text = textBox1.Text.Substring(1);
@@ -111,34 +127,18 @@ namespace Visual_Calculator
                 textBox1.Text = "-" + textBox1.Text;
         }
 
-        private void btn7_Click(object sender, EventArgs e)
+        private void btnDigit(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-
-            if (textBox1.Text == "0" && button.Text != ".")
-            {
-                textBox1.Text = button.Text;
-            }
-            else
-            {
-                if (button.Text == ".")
-                {
-                    if (!textBox1.Text.Contains("."))
-                        textBox1.Text += button.Text;
-                }
-                else
-                {
-                    textBox1.Text += button.Text;
-                }
-            }
+            if (textBox1.Text == "0" || enterValue) textBox1.Text = string.Empty;
 
             enterValue = false;
+            Button button = (Button)sender;
+            if (button.Text == ".")
+            {
+                if (!textBox1.Text.Contains("."))
+                    textBox1.Text = textBox1.Text + button.Text;
+            }
+            else textBox1.Text = textBox1.Text + button.Text;
         }
-
     }
-=======
-    }
-
-    
->>>>>>> origin/dev
 }
