@@ -68,7 +68,7 @@ namespace Visual_Calculator
                         case "÷":
                             if (num == 0)
                             {
-                                textBox1.Text = "Error!";
+                                textBox1.Text = "Не можна ділити на 0!";
                                 textBox2.Text = string.Empty;
                                 return;
                             }
@@ -126,6 +126,67 @@ namespace Visual_Calculator
             else if (textBox1.Text != "0")
                 textBox1.Text = "-" + textBox1.Text;
         }
+
+        private void Btn5__Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double num = Double.Parse(textBox1.Text);
+                if (num != 0)
+                {
+                    textBox1.Text = (1 / num).ToString();
+                }
+                else
+                {
+                    textBox1.Text = "Cannot divide by zero!";
+                }
+            }
+            catch
+            {
+                textBox1.Text = "Error!";
+            }
+        }
+
+        private void Btn1__Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double num = Double.Parse(textBox1.Text);
+                textBox1.Text = (num / 100).ToString();
+            }
+            catch
+            {
+                textBox1.Text = "Error!";
+            }
+        }
+
+        private void Btn23_Click(object sender, EventArgs e)
+        {
+            if (!textBox1.Text.Contains(","))
+            {
+                textBox1.Text += ",";
+            }
+        }
+
+        private void Btn__Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double num = Double.Parse(textBox1.Text);
+                if (num >= 0)
+                {
+                    textBox1.Text = Math.Sqrt(num).ToString();
+                }
+                else
+                {
+                    textBox1.Text = "Invalid input!";
+                }
+            }
+            catch
+            {
+                textBox1.Text = "Error!";
+            }
+        }   
 
         private void btnDigit(object sender, EventArgs e)
         {
