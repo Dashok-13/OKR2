@@ -3,11 +3,8 @@
 using System.Windows.Forms;
 namespace Visual_Calculator
 {
-
-
     public partial class FrmCalculator : Form
     {
-
         public FrmCalculator()
         {
             InitializeComponent();

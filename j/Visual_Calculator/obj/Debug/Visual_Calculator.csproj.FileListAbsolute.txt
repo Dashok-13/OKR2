@@ -28,3 +28,13 @@ C:\project\OKR2\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.GenerateRes
 C:\project\OKR2\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.CoreCompileInputs.cache
 C:\project\OKR2\Visual_Calculator\obj\Debug\Visual_Calculator.exe
 C:\project\OKR2\Visual_Calculator\obj\Debug\Visual_Calculator.pdb
+C:\project\j\Visual_Calculator\bin\Debug\Visual_Calculator.exe.config
+C:\project\j\Visual_Calculator\bin\Debug\Visual_Calculator.exe
+C:\project\j\Visual_Calculator\bin\Debug\Visual_Calculator.pdb
+C:\project\j\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.AssemblyReference.cache
+C:\project\j\Visual_Calculator\obj\Debug\Visual_Calculator.FrmCalculator.resources
+C:\project\j\Visual_Calculator\obj\Debug\Visual_Calculator.Properties.Resources.resources
+C:\project\j\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.GenerateResource.cache
+C:\project\j\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.CoreCompileInputs.cache
+C:\project\j\Visual_Calculator\obj\Debug\Visual_Calculator.exe
+C:\project\j\Visual_Calculator\obj\Debug\Visual_Calculator.pdb
