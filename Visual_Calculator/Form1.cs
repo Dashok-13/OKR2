@@ -1,25 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
+
 namespace Visual_Calculator
 {
-
-
     public partial class FrmCalculator : Form
     {
-
         public FrmCalculator()
         {
             InitializeComponent();
         }
+
         Double result = 0;
         string operation = string.Empty;
         string fstNum, secNum;
@@ -38,7 +29,6 @@ namespace Visual_Calculator
                 textBox2.Text = fstNum = $"{result}{operation}";
                 textBox1.Text = string.Empty;
             }
-
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -94,17 +84,46 @@ namespace Visual_Calculator
 
                 operation = string.Empty;
             }
-
-
-
         }
 
         private void RemoveLastChar(object sender, EventArgs e)
         {
+            // Перевіряємо, чи є хоча б один символ в першому текстбоксі
             if (textBox1.Text.Length > 0)
-                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
-            if (textBox1.Text == string.Empty) textBox1.Text = "0";
+            {
+                // Якщо останнім символом є дія (операція)
+                if ("+-×÷".Contains(textBox1.Text.Last()))
+                {
+                    // Якщо це дія, видаляємо її з першого і другого текстбоксів
+                    textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                    textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
+                }
+                // Якщо останнім символом є число, то просто видаляємо його
+                else
+                {
+                    textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                }
 
+                // Якщо текст в першому текстбоксі порожній і в другому текстбоксі є дія, не ставимо "0"
+                if (textBox1.Text == string.Empty && textBox2.Text != string.Empty)
+                {
+                    textBox1.Text = string.Empty; // Порожній текстбокс, якщо є дія в другому
+                }
+                else if (textBox1.Text == string.Empty) // Якщо в першому текстбоксі порожньо і немає дії
+                {
+                    textBox1.Text = "0"; // Встановлюємо "0", якщо нічого не введено
+                }
+            }
+            else if (textBox2.Text.Length > 0) // Якщо перший текстбокс порожній, але в другому текстбоксі є дія
+            {
+                // Видаляємо останній символ (дію) з другого текстбокса
+                textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
+                // Перевіряємо, якщо після видалення дії другий текстбокс став порожнім, повертаємо "0" в перший текстбокс
+                if (textBox2.Text == string.Empty)
+                {
+                    textBox1.Text = "0";
+                }
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -186,20 +205,26 @@ namespace Visual_Calculator
             {
                 textBox1.Text = "Error!";
             }
-        }   
+        }
 
         private void btnDigit(object sender, EventArgs e)
         {
-            if (textBox1.Text == "0" || enterValue) textBox1.Text = string.Empty;
+            if (textBox1.Text == "0" || enterValue)
+            {
+                textBox1.Text = string.Empty;
+                enterValue = false; // Вимикаємо очищення після введення першого символу
+            }
 
-            enterValue = false;
             Button button = (Button)sender;
             if (button.Text == ".")
             {
                 if (!textBox1.Text.Contains("."))
-                    textBox1.Text = textBox1.Text + button.Text;
+                    textBox1.Text += button.Text;
             }
-            else textBox1.Text = textBox1.Text + button.Text;
+            else
+            {
+                textBox1.Text += button.Text;
+            }
         }
     }
 }
