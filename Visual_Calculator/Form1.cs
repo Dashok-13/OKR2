@@ -11,15 +11,15 @@ namespace Visual_Calculator
             InitializeComponent();
         }
 
-        Double result = 0,fstval;
+        Double result = 0, fstval;
         string operation = string.Empty, operation2 = string.Empty;
         string fstNum, secNum;
         bool enterValue = false;
 
         private void AdditionButton(object sender, EventArgs e)
         {
-            if(textBox1.Text!= "")
-            fstval = Double.Parse(textBox1.Text);
+            if (textBox1.Text != "")
+                fstval = Double.Parse(textBox1.Text);
 
             if (result != 0) btnEnter.PerformClick();
             else result = Double.Parse(textBox1.Text);
@@ -27,10 +27,10 @@ namespace Visual_Calculator
             Button button = (Button)sender;
             operation = button.Text;
             enterValue = true;
-            
-                textBox2.Text = fstNum = $"{result} {operation}";
-                textBox1.Text = string.Empty;
-            
+
+            textBox2.Text = fstNum = $"{result} {operation}";
+            textBox1.Text = string.Empty;
+
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -113,12 +113,12 @@ namespace Visual_Calculator
                 {
                     textBox1.Text = string.Empty;
                 }
-                else if (textBox1.Text == string.Empty) 
+                else if (textBox1.Text == string.Empty)
                 {
-                    textBox1.Text = "0"; 
+                    textBox1.Text = "0";
                 }
             }
-            else if (textBox2.Text.Length > 0) 
+            else if (textBox2.Text.Length > 0)
             {
                 textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
                 if (textBox2.Text == string.Empty)
@@ -158,7 +158,7 @@ namespace Visual_Calculator
         {
             Button button = (Button)sender;
             operation2 = button.Text;
-            
+
             switch (operation2)
             {
                 case "²√x":
@@ -202,19 +202,19 @@ namespace Visual_Calculator
                             break;
                     }
 
-                    
+
 
                     break;
 
             }
         }
 
-            private void btnDigit(object sender, EventArgs e)
+        private void btnDigit(object sender, EventArgs e)
         {
             if (textBox1.Text == "0" || enterValue)
             {
                 textBox1.Text = string.Empty;
-                enterValue = false; 
+                enterValue = false;
             }
 
             Button button = (Button)sender;
