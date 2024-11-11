@@ -1,27 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
+
 namespace Visual_Calculator
 {
-
-
     public partial class FrmCalculator : Form
     {
-
         public FrmCalculator()
         {
             InitializeComponent();
         }
+
         Double result = 0;
-        string operation = string.Empty, operation2 = string.Empty;
+        string operation = string.Empty;
         string fstNum, secNum;
         bool enterValue = false;
 
@@ -36,12 +27,7 @@ namespace Visual_Calculator
             
                 textBox2.Text = fstNum = $"{result}{operation}";
                 textBox1.Text = string.Empty;
-<<<<<<< HEAD
-            }
-
-=======
             
->>>>>>> 047cddf (Functionality Updated sptint 2)
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -71,7 +57,7 @@ namespace Visual_Calculator
                         case "÷":
                             if (num == 0)
                             {
-                                textBox1.Text = "Error!";
+                                textBox1.Text = "Не можна ділити на 0!";
                                 textBox2.Text = string.Empty;
                                 return;
                             }
@@ -97,19 +83,11 @@ namespace Visual_Calculator
 
                 operation = string.Empty;
             }
-
-
-
         }
 
         private void RemoveLastChar(object sender, EventArgs e)
         {
             if (textBox1.Text.Length > 0)
-<<<<<<< HEAD
-                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
-            if (textBox1.Text == string.Empty) textBox1.Text = "0";
-
-=======
             {
                 if ("+-×÷".Contains(textBox1.Text.Last()))
                 {
@@ -123,7 +101,7 @@ namespace Visual_Calculator
 
                 if (textBox1.Text == string.Empty && textBox2.Text != string.Empty)
                 {
-                    textBox1.Text = string.Empty; 
+                    textBox1.Text = string.Empty;
                 }
                 else if (textBox1.Text == string.Empty) 
                 {
@@ -132,14 +110,12 @@ namespace Visual_Calculator
             }
             else if (textBox2.Text.Length > 0) 
             {
-               
                 textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
                 if (textBox2.Text == string.Empty)
                 {
                     textBox1.Text = "0";
                 }
             }
->>>>>>> 047cddf (Functionality Updated sptint 2)
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -161,55 +137,56 @@ namespace Visual_Calculator
             else if (textBox1.Text != "0")
                 textBox1.Text = "-" + textBox1.Text;
         }
-<<<<<<< HEAD
 
-        private void btnDigit(object sender, EventArgs e)
-        {
-            if (textBox1.Text == "0" || enterValue) textBox1.Text = string.Empty;
-=======
-        private void Btn5__Click(object sender, EventArgs e)
+        
+
+        
+
+       
+
+        private void Btn1__Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            operation2 = button.Text;
-            switch (operation2)
+            operation = button.Text;
+            switch (operation)
             {
                 case "²√x":
                     textBox2.Text = $"²√({textBox1.Text})";
-                    textBox1.Text = Math.Sqrt(Double.Parse(textBox1.Text)).ToString();
+                    textBox1.Text = Convert.ToString(Math.Sqrt(Double.Parse(textBox1.Text)));
                     break;
                 case "x²":
                     textBox2.Text = $"({textBox1.Text})²";
-                    textBox1.Text = (Double.Parse(textBox1.Text) * Double.Parse(textBox1.Text)).ToString();
+                    textBox1.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox1.Text));
                     break;
                 case "⅟x":
                     textBox2.Text = $"⅟({textBox1.Text})";
-                    textBox1.Text = (1.0 / Double.Parse(textBox1.Text)).ToString();
+                    textBox1.Text = Convert.ToString(1.0 / Convert.ToDouble(textBox1.Text));
                     break;
                 case "%":
                     textBox2.Text = $"%({textBox1.Text})";
                     textBox1.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) / Convert.ToDouble(100));
                     break;
-
-
             }
         }
-        private void btnDigit(object sender, EventArgs e)
+
+            private void btnDigit(object sender, EventArgs e)
         {
             if (textBox1.Text == "0" || enterValue)
             {
                 textBox1.Text = string.Empty;
                 enterValue = false; 
             }
->>>>>>> 047cddf (Functionality Updated sptint 2)
 
-            enterValue = false;
             Button button = (Button)sender;
             if (button.Text == ".")
             {
                 if (!textBox1.Text.Contains("."))
-                    textBox1.Text = textBox1.Text + button.Text;
+                    textBox1.Text += button.Text;
             }
-            else textBox1.Text = textBox1.Text + button.Text;
+            else
+            {
+                textBox1.Text += button.Text;
+            }
         }
     }
 }

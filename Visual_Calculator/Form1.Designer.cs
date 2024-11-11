@@ -30,7 +30,6 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             this.panelTitel = new System.Windows.Forms.Panel();
             this.buttonExit = new System.Windows.Forms.Button();
             this.BtnPlusMinus = new CustomControls.RJControls.RJButton();
@@ -57,6 +56,7 @@
             this.Btn2_ = new CustomControls.RJControls.RJButton();
             this.btnBackSpace = new CustomControls.RJControls.RJButton();
             this.btnClear = new CustomControls.RJControls.RJButton();
+            this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             this.panelTitel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,13 +66,13 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Gadugi", 30F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Font = new System.Drawing.Font("Gadugi", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.textBox1.Location = new System.Drawing.Point(0, 65);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(350, 50);
+            this.textBox1.Size = new System.Drawing.Size(350, 82);
             this.textBox1.TabIndex = 19;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -92,11 +92,6 @@
             this.textBox2.Size = new System.Drawing.Size(350, 25);
             this.textBox2.TabIndex = 20;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // elipseControl1
-            // 
-            this.elipseControl1.CornerRadius = 20;
-            this.elipseControl1.TargetControl = this;
             // 
             // panelTitel
             // 
@@ -206,10 +201,7 @@
             this.Btn23.Text = ",";
             this.Btn23.TextColor = System.Drawing.Color.White;
             this.Btn23.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
             this.Btn23.Click += new System.EventHandler(this.btnDigit);
->>>>>>> 047cddf (Functionality Updated sptint 2)
             // 
             // Btn1
             // 
@@ -482,6 +474,7 @@
             this.Btn5_.Text = "⅟x";
             this.Btn5_.TextColor = System.Drawing.Color.White;
             this.Btn5_.UseVisualStyleBackColor = false;
+            this.Btn5_.Click += new System.EventHandler(this.Btn1__Click);
             // 
             // Btn6_
             // 
@@ -502,7 +495,7 @@
             this.Btn6_.Text = "x²";
             this.Btn6_.TextColor = System.Drawing.Color.White;
             this.Btn6_.UseVisualStyleBackColor = false;
-            this.Btn6_.Click += new System.EventHandler(this.Btn5__Click);
+            this.Btn6_.Click += new System.EventHandler(this.Btn1__Click);
             // 
             // btnDivide
             // 
@@ -544,10 +537,7 @@
             this.Btn_.Text = "²√x";
             this.Btn_.TextColor = System.Drawing.Color.White;
             this.Btn_.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
-            this.Btn_.Click += new System.EventHandler(this.Btn5__Click);
->>>>>>> 047cddf (Functionality Updated sptint 2)
+            this.Btn_.Click += new System.EventHandler(this.Btn1__Click);
             // 
             // Btn1_
             // 
@@ -568,10 +558,7 @@
             this.Btn1_.Text = "%";
             this.Btn1_.TextColor = System.Drawing.Color.White;
             this.Btn1_.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
-=======
-            this.Btn1_.Click += new System.EventHandler(this.Btn5__Click);
->>>>>>> 047cddf (Functionality Updated sptint 2)
+            this.Btn1_.Click += new System.EventHandler(this.Btn1__Click);
             // 
             // Btn2_
             // 
@@ -634,6 +621,11 @@
             this.btnClear.TextColor = System.Drawing.Color.White;
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // elipseControl1
+            // 
+            this.elipseControl1.CornerRadius = 20;
+            this.elipseControl1.TargetControl = this;
             // 
             // FrmCalculator
             // 

@@ -28,3 +28,13 @@ C:\Users\Дарія\Downloads\OKR2\OKR2\Visual_Calculator\obj\Debug\Visual_Calcu
 C:\Users\Дарія\Downloads\OKR2\OKR2\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.CoreCompileInputs.cache
 C:\Users\Дарія\Downloads\OKR2\OKR2\Visual_Calculator\obj\Debug\Visual_Calculator.exe
 C:\Users\Дарія\Downloads\OKR2\OKR2\Visual_Calculator\obj\Debug\Visual_Calculator.pdb
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\bin\Debug\Visual_Calculator.exe.config
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\bin\Debug\Visual_Calculator.exe
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\bin\Debug\Visual_Calculator.pdb
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.AssemblyReference.cache
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\obj\Debug\Visual_Calculator.FrmCalculator.resources
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\obj\Debug\Visual_Calculator.Properties.Resources.resources
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.GenerateResource.cache
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\obj\Debug\Visual_Calculator.csproj.CoreCompileInputs.cache
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\obj\Debug\Visual_Calculator.exe
+C:\Users\User\Git_Rep\calculator\Visual_Calculator\obj\Debug\Visual_Calculator.pdb
