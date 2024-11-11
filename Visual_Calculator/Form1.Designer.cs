@@ -579,6 +579,7 @@
             this.Btn2_.Text = "CE";
             this.Btn2_.TextColor = System.Drawing.Color.White;
             this.Btn2_.UseVisualStyleBackColor = false;
+            this.Btn2_.Click += new System.EventHandler(this.Btn2__Click);
             // 
             // btnBackSpace
             // 

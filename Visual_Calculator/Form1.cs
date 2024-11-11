@@ -11,13 +11,16 @@ namespace Visual_Calculator
             InitializeComponent();
         }
 
-        Double result = 0;
-        string operation = string.Empty;
+        Double result = 0,fstval;
+        string operation = string.Empty, operation2 = string.Empty;
         string fstNum, secNum;
         bool enterValue = false;
 
         private void AdditionButton(object sender, EventArgs e)
         {
+            if(textBox1.Text!= "")
+            fstval = Double.Parse(textBox1.Text);
+
             if (result != 0) btnEnter.PerformClick();
             else result = Double.Parse(textBox1.Text);
 
@@ -25,15 +28,15 @@ namespace Visual_Calculator
             operation = button.Text;
             enterValue = true;
             
-                textBox2.Text = fstNum = $"{result}{operation}";
+                textBox2.Text = fstNum = $"{result} {operation}";
                 textBox1.Text = string.Empty;
             
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            secNum = textBox1.Text;
-            textBox2.Text = $"{textBox2.Text}{textBox1.Text}";
+            textBox2.Text = "";
+
 
             if (textBox1.Text != string.Empty)
             {
@@ -41,17 +44,21 @@ namespace Visual_Calculator
 
                 try
                 {
+
                     double num = Double.Parse(textBox1.Text);
 
                     switch (operation)
                     {
                         case "+":
+                            textBox2.Text = $"{fstval} {operation}{textBox1.Text}";
                             textBox1.Text = (result + num).ToString();
                             break;
                         case "-":
+                            textBox2.Text = $"{fstval} {operation} {textBox1.Text}";
                             textBox1.Text = (result - num).ToString();
                             break;
                         case "×":
+                            textBox2.Text = $"{fstval} {operation}{textBox1.Text}";
                             textBox1.Text = (result * num).ToString();
                             break;
                         case "÷":
@@ -61,13 +68,16 @@ namespace Visual_Calculator
                                 textBox2.Text = string.Empty;
                                 return;
                             }
+                            textBox2.Text = $"{fstval} {operation}{textBox1.Text}";
                             textBox1.Text = (result / num).ToString();
                             break;
+
                         default:
                             textBox2.Text = $"{textBox1.Text}";
                             break;
                     }
                     result = Double.Parse(textBox1.Text);
+                    textBox2.Text += " =";
                 }
                 catch (FormatException)
                 {
@@ -130,6 +140,12 @@ namespace Visual_Calculator
             Application.Exit();
         }
 
+        private void Btn2__Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "0";
+
+        }
+
         private void BtnPlusMinus_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.StartsWith("-"))
@@ -138,34 +154,58 @@ namespace Visual_Calculator
                 textBox1.Text = "-" + textBox1.Text;
         }
 
-        
-
-        
-
-       
-
         private void Btn1__Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            operation = button.Text;
-            switch (operation)
+            operation2 = button.Text;
+            
+            switch (operation2)
             {
                 case "²√x":
-                    textBox2.Text = $"²√({textBox1.Text})";
+                    textBox2.Text = $"{fstval} {operation} ²√({textBox1.Text})";
                     textBox1.Text = Convert.ToString(Math.Sqrt(Double.Parse(textBox1.Text)));
                     break;
                 case "x²":
-                    textBox2.Text = $"({textBox1.Text})²";
+                    textBox2.Text = $"{fstval} {operation} ({textBox1.Text})²";
                     textBox1.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) * Convert.ToDouble(textBox1.Text));
                     break;
                 case "⅟x":
-                    textBox2.Text = $"⅟({textBox1.Text})";
+                    textBox2.Text = $"{fstval} {operation} ⅟({textBox1.Text})";
                     textBox1.Text = Convert.ToString(1.0 / Convert.ToDouble(textBox1.Text));
                     break;
                 case "%":
-                    textBox2.Text = $"%({textBox1.Text})";
-                    textBox1.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) / Convert.ToDouble(100));
+                    double percentage = Double.Parse(textBox1.Text);
+                    double percentageValue = fstval * (percentage / 100);
+                    double percentageValue2 = percentage / 100;
+
+                    switch (operation)
+                    {
+                        case "+":
+                            textBox2.Text = $"{fstval} {operation} {percentage}%";
+                            textBox1.Text = percentageValue.ToString();
+                            break;
+                        case "-":
+                            textBox2.Text = $"{fstval} {operation} {percentage}%";
+                            textBox1.Text = percentageValue.ToString();
+                            break;
+                        case "×":
+                            textBox2.Text = $"{fstval} {operation} {percentage}%";
+                            textBox1.Text = percentageValue2.ToString();
+                            break;
+
+                        case "÷":
+                            textBox2.Text = $"{fstval} {operation} {percentage}%";
+                            if (percentageValue2 == 0)
+                                textBox1.Text = "Не можна ділити на 0!";
+                            else
+                                textBox1.Text = percentageValue2.ToString();
+                            break;
+                    }
+
+                    
+
                     break;
+
             }
         }
 
