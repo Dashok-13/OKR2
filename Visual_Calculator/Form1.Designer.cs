@@ -201,7 +201,11 @@
             this.Btn23.Text = ",";
             this.Btn23.TextColor = System.Drawing.Color.White;
             this.Btn23.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
             this.Btn23.Click += new System.EventHandler(this.btnDigit);
+=======
+            this.Btn23.Click += new System.EventHandler(this.Btn23_Click);
+>>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
             // 
             // Btn1
             // 
@@ -474,7 +478,11 @@
             this.Btn5_.Text = "⅟x";
             this.Btn5_.TextColor = System.Drawing.Color.White;
             this.Btn5_.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
             this.Btn5_.Click += new System.EventHandler(this.Btn1__Click);
+=======
+            this.Btn5_.Click += new System.EventHandler(this.Btn5__Click);
+>>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
             // 
             // Btn6_
             // 
@@ -537,7 +545,11 @@
             this.Btn_.Text = "²√x";
             this.Btn_.TextColor = System.Drawing.Color.White;
             this.Btn_.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
             this.Btn_.Click += new System.EventHandler(this.Btn1__Click);
+=======
+            this.Btn_.Click += new System.EventHandler(this.Btn__Click);
+>>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
             // 
             // Btn1_
             // 
@@ -629,7 +641,7 @@
             // 
             // FrmCalculator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(21F, 50F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(350, 570);

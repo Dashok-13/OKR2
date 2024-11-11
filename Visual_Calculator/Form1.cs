@@ -27,7 +27,11 @@ namespace Visual_Calculator
             
                 textBox2.Text = fstNum = $"{result}{operation}";
                 textBox1.Text = string.Empty;
+<<<<<<< HEAD
             
+=======
+            }
+>>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -87,18 +91,31 @@ namespace Visual_Calculator
 
         private void RemoveLastChar(object sender, EventArgs e)
         {
+            // Перевіряємо, чи є хоча б один символ в першому текстбоксі
             if (textBox1.Text.Length > 0)
             {
+<<<<<<< HEAD
                 if ("+-×÷".Contains(textBox1.Text.Last()))
                 {
                     textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                     textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
                 }
+=======
+                // Якщо останнім символом є дія (операція)
+                if ("+-×÷".Contains(textBox1.Text.Last()))
+                {
+                    // Якщо це дія, видаляємо її з першого і другого текстбоксів
+                    textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                    textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
+                }
+                // Якщо останнім символом є число, то просто видаляємо його
+>>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
                 else
                 {
                     textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
                 }
 
+<<<<<<< HEAD
                 if (textBox1.Text == string.Empty && textBox2.Text != string.Empty)
                 {
                     textBox1.Text = string.Empty;
@@ -111,6 +128,23 @@ namespace Visual_Calculator
             else if (textBox2.Text.Length > 0) 
             {
                 textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
+=======
+                // Якщо текст в першому текстбоксі порожній і в другому текстбоксі є дія, не ставимо "0"
+                if (textBox1.Text == string.Empty && textBox2.Text != string.Empty)
+                {
+                    textBox1.Text = string.Empty; // Порожній текстбокс, якщо є дія в другому
+                }
+                else if (textBox1.Text == string.Empty) // Якщо в першому текстбоксі порожньо і немає дії
+                {
+                    textBox1.Text = "0"; // Встановлюємо "0", якщо нічого не введено
+                }
+            }
+            else if (textBox2.Text.Length > 0) // Якщо перший текстбокс порожній, але в другому текстбоксі є дія
+            {
+                // Видаляємо останній символ (дію) з другого текстбокса
+                textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
+                // Перевіряємо, якщо після видалення дії другий текстбокс став порожнім, повертаємо "0" в перший текстбокс
+>>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
                 if (textBox2.Text == string.Empty)
                 {
                     textBox1.Text = "0";
@@ -138,6 +172,7 @@ namespace Visual_Calculator
                 textBox1.Text = "-" + textBox1.Text;
         }
 
+<<<<<<< HEAD
         
 
         
@@ -170,11 +205,79 @@ namespace Visual_Calculator
         }
 
             private void btnDigit(object sender, EventArgs e)
+=======
+        private void Btn5__Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double num = Double.Parse(textBox1.Text);
+                if (num != 0)
+                {
+                    textBox1.Text = (1 / num).ToString();
+                }
+                else
+                {
+                    textBox1.Text = "Cannot divide by zero!";
+                }
+            }
+            catch
+            {
+                textBox1.Text = "Error!";
+            }
+        }
+
+        private void Btn1__Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double num = Double.Parse(textBox1.Text);
+                textBox1.Text = (num / 100).ToString();
+            }
+            catch
+            {
+                textBox1.Text = "Error!";
+            }
+        }
+
+        private void Btn23_Click(object sender, EventArgs e)
+        {
+            if (!textBox1.Text.Contains(","))
+            {
+                textBox1.Text += ",";
+            }
+        }
+
+        private void Btn__Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double num = Double.Parse(textBox1.Text);
+                if (num >= 0)
+                {
+                    textBox1.Text = Math.Sqrt(num).ToString();
+                }
+                else
+                {
+                    textBox1.Text = "Invalid input!";
+                }
+            }
+            catch
+            {
+                textBox1.Text = "Error!";
+            }
+        }
+
+        private void btnDigit(object sender, EventArgs e)
+>>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
         {
             if (textBox1.Text == "0" || enterValue)
             {
                 textBox1.Text = string.Empty;
+<<<<<<< HEAD
                 enterValue = false; 
+=======
+                enterValue = false; // Вимикаємо очищення після введення першого символу
+>>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
             }
 
             Button button = (Button)sender;
