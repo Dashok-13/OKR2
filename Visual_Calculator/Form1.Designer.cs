@@ -206,6 +206,10 @@
             this.Btn23.Text = ",";
             this.Btn23.TextColor = System.Drawing.Color.White;
             this.Btn23.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
+            this.Btn23.Click += new System.EventHandler(this.btnDigit);
+>>>>>>> 047cddf (Functionality Updated sptint 2)
             // 
             // Btn1
             // 
@@ -498,6 +502,7 @@
             this.Btn6_.Text = "x²";
             this.Btn6_.TextColor = System.Drawing.Color.White;
             this.Btn6_.UseVisualStyleBackColor = false;
+            this.Btn6_.Click += new System.EventHandler(this.Btn5__Click);
             // 
             // btnDivide
             // 
@@ -539,6 +544,10 @@
             this.Btn_.Text = "²√x";
             this.Btn_.TextColor = System.Drawing.Color.White;
             this.Btn_.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
+            this.Btn_.Click += new System.EventHandler(this.Btn5__Click);
+>>>>>>> 047cddf (Functionality Updated sptint 2)
             // 
             // Btn1_
             // 
@@ -559,6 +568,10 @@
             this.Btn1_.Text = "%";
             this.Btn1_.TextColor = System.Drawing.Color.White;
             this.Btn1_.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
+=======
+            this.Btn1_.Click += new System.EventHandler(this.Btn5__Click);
+>>>>>>> 047cddf (Functionality Updated sptint 2)
             // 
             // Btn2_
             // 

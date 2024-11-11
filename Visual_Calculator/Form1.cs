@@ -21,7 +21,7 @@ namespace Visual_Calculator
             InitializeComponent();
         }
         Double result = 0;
-        string operation = string.Empty;
+        string operation = string.Empty, operation2 = string.Empty;
         string fstNum, secNum;
         bool enterValue = false;
 
@@ -33,12 +33,15 @@ namespace Visual_Calculator
             Button button = (Button)sender;
             operation = button.Text;
             enterValue = true;
-            if (textBox1.Text != "0")
-            {
+            
                 textBox2.Text = fstNum = $"{result}{operation}";
                 textBox1.Text = string.Empty;
+<<<<<<< HEAD
             }
 
+=======
+            
+>>>>>>> 047cddf (Functionality Updated sptint 2)
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -102,9 +105,41 @@ namespace Visual_Calculator
         private void RemoveLastChar(object sender, EventArgs e)
         {
             if (textBox1.Text.Length > 0)
+<<<<<<< HEAD
                 textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
             if (textBox1.Text == string.Empty) textBox1.Text = "0";
 
+=======
+            {
+                if ("+-×÷".Contains(textBox1.Text.Last()))
+                {
+                    textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                    textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
+                }
+                else
+                {
+                    textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                }
+
+                if (textBox1.Text == string.Empty && textBox2.Text != string.Empty)
+                {
+                    textBox1.Text = string.Empty; 
+                }
+                else if (textBox1.Text == string.Empty) 
+                {
+                    textBox1.Text = "0"; 
+                }
+            }
+            else if (textBox2.Text.Length > 0) 
+            {
+               
+                textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - 1);
+                if (textBox2.Text == string.Empty)
+                {
+                    textBox1.Text = "0";
+                }
+            }
+>>>>>>> 047cddf (Functionality Updated sptint 2)
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -126,10 +161,46 @@ namespace Visual_Calculator
             else if (textBox1.Text != "0")
                 textBox1.Text = "-" + textBox1.Text;
         }
+<<<<<<< HEAD
 
         private void btnDigit(object sender, EventArgs e)
         {
             if (textBox1.Text == "0" || enterValue) textBox1.Text = string.Empty;
+=======
+        private void Btn5__Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            operation2 = button.Text;
+            switch (operation2)
+            {
+                case "²√x":
+                    textBox2.Text = $"²√({textBox1.Text})";
+                    textBox1.Text = Math.Sqrt(Double.Parse(textBox1.Text)).ToString();
+                    break;
+                case "x²":
+                    textBox2.Text = $"({textBox1.Text})²";
+                    textBox1.Text = (Double.Parse(textBox1.Text) * Double.Parse(textBox1.Text)).ToString();
+                    break;
+                case "⅟x":
+                    textBox2.Text = $"⅟({textBox1.Text})";
+                    textBox1.Text = (1.0 / Double.Parse(textBox1.Text)).ToString();
+                    break;
+                case "%":
+                    textBox2.Text = $"%({textBox1.Text})";
+                    textBox1.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) / Convert.ToDouble(100));
+                    break;
+
+
+            }
+        }
+        private void btnDigit(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "0" || enterValue)
+            {
+                textBox1.Text = string.Empty;
+                enterValue = false; 
+            }
+>>>>>>> 047cddf (Functionality Updated sptint 2)
 
             enterValue = false;
             Button button = (Button)sender;
