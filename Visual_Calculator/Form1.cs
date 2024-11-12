@@ -290,7 +290,7 @@ namespace Visual_Calculator
             {
                 double value = Double.Parse(textBox1.Text);
                 textBox2.Text = $"cos({value})";
-                textBox1.Text = Math.Cos(value * Math.PI / 180).ToString(); // Переводимо градуси в радіани
+                textBox1.Text = Math.Cos(value * Math.PI / 180).ToString(); 
             }
             catch (FormatException)
             {
@@ -305,7 +305,7 @@ namespace Visual_Calculator
             {
                 double value = Double.Parse(textBox1.Text);
                 textBox2.Text = $"sin({value})";
-                textBox1.Text = Math.Sin(value * Math.PI / 180).ToString(); // Переводимо градуси в радіани
+                textBox1.Text = Math.Sin(value * Math.PI / 180).ToString(); 
             }
             catch (FormatException)
             {
@@ -320,7 +320,7 @@ namespace Visual_Calculator
             {
                 double value = Double.Parse(textBox1.Text);
                 textBox2.Text = $"tan({value})";
-                textBox1.Text = Math.Tan(value * Math.PI / 180).ToString(); // Переводимо градуси в радіани
+                textBox1.Text = Math.Tan(value * Math.PI / 180).ToString(); 
             }
             catch (FormatException)
             {
@@ -335,10 +335,10 @@ namespace Visual_Calculator
             {
                 double value = Double.Parse(textBox1.Text);
                 textBox2.Text = $"ctg({value})";
-                if (Math.Tan(value * Math.PI / 180) != 0) // Перевірка на дільник 0
-                    textBox1.Text = (1 / Math.Tan(value * Math.PI / 180)).ToString(); // Переводимо градуси в радіани
+                if (Math.Tan(value * Math.PI / 180) != 0)
+                    textBox1.Text = (1 / Math.Tan(value * Math.PI / 180)).ToString();
                 else
-                    textBox1.Text = "Undefined"; // Якщо ctg не визначено
+                    textBox1.Text = "Undefined"; 
             }
             catch (FormatException)
             {
@@ -367,7 +367,6 @@ namespace Visual_Calculator
                 textBox1.Text += button.Text;
             }
         }
-        // Подія для обробки натискання цифр і десяткової точки
         private void FrmCalculator_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) || e.KeyChar == '.')
@@ -387,11 +386,10 @@ namespace Visual_Calculator
                     textBox1.Text += e.KeyChar;
                 }
 
-                e.Handled = true; // Забороняє передачу символу іншим елементам
+                e.Handled = true;
             }
         }
 
-        // Подія для обробки операцій і спеціальних клавіш
         private void FrmCalculator_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
