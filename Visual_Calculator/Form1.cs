@@ -9,6 +9,9 @@ namespace Visual_Calculator
         public FrmCalculator()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+            this.KeyPress += FrmCalculator_KeyPress;
+            this.KeyDown += FrmCalculator_KeyDown;
         }
 
         Double result = 0, fstval;
@@ -209,6 +212,70 @@ namespace Visual_Calculator
             }
         }
 
+        private void CosButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double value = Double.Parse(textBox1.Text);
+                textBox2.Text = $"cos({value})";
+                textBox1.Text = Math.Cos(value * Math.PI / 180).ToString(); // Переводимо градуси в радіани
+            }
+            catch (FormatException)
+            {
+                textBox1.Text = "Invalid input!";
+                textBox2.Text = string.Empty;
+            }
+        }
+
+        private void SinButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double value = Double.Parse(textBox1.Text);
+                textBox2.Text = $"sin({value})";
+                textBox1.Text = Math.Sin(value * Math.PI / 180).ToString(); // Переводимо градуси в радіани
+            }
+            catch (FormatException)
+            {
+                textBox1.Text = "Invalid input!";
+                textBox2.Text = string.Empty;
+            }
+        }
+
+        private void TanButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double value = Double.Parse(textBox1.Text);
+                textBox2.Text = $"tan({value})";
+                textBox1.Text = Math.Tan(value * Math.PI / 180).ToString(); // Переводимо градуси в радіани
+            }
+            catch (FormatException)
+            {
+                textBox1.Text = "Invalid input!";
+                textBox2.Text = string.Empty;
+            }
+        }
+
+        private void CtgButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double value = Double.Parse(textBox1.Text);
+                textBox2.Text = $"ctg({value})";
+                if (Math.Tan(value * Math.PI / 180) != 0) // Перевірка на дільник 0
+                    textBox1.Text = (1 / Math.Tan(value * Math.PI / 180)).ToString(); // Переводимо градуси в радіани
+                else
+                    textBox1.Text = "Undefined"; // Якщо ctg не визначено
+            }
+            catch (FormatException)
+            {
+                textBox1.Text = "Invalid input!";
+                textBox2.Text = string.Empty;
+            }
+        }
+
+
         private void btnDigit(object sender, EventArgs e)
         {
             if (textBox1.Text == "0" || enterValue)
@@ -226,6 +293,62 @@ namespace Visual_Calculator
             else
             {
                 textBox1.Text += button.Text;
+            }
+        }
+        // Подія для обробки натискання цифр і десяткової точки
+        private void FrmCalculator_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == '.')
+            {
+                if (textBox1.Text == "0" || enterValue)
+                {
+                    textBox1.Text = string.Empty;
+                    enterValue = false;
+                }
+
+                if (e.KeyChar == '.' && !textBox1.Text.Contains("."))
+                {
+                    textBox1.Text += e.KeyChar;
+                }
+                else if (char.IsDigit(e.KeyChar))
+                {
+                    textBox1.Text += e.KeyChar;
+                }
+
+                e.Handled = true; // Забороняє передачу символу іншим елементам
+            }
+        }
+
+        // Подія для обробки операцій і спеціальних клавіш
+        private void FrmCalculator_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Add:
+                case Keys.Oemplus:
+                    AdditionButton(new Button { Text = "+" }, e);
+                    break;
+                case Keys.Subtract:
+                case Keys.OemMinus:
+                    AdditionButton(new Button { Text = "-" }, e);
+                    break;
+                case Keys.Multiply:
+                case Keys.D8: // Shift + 8 для "*"
+                    AdditionButton(new Button { Text = "×" }, e);
+                    break;
+                case Keys.Divide:
+                case Keys.OemQuestion: // "/" на клавіатурі
+                    AdditionButton(new Button { Text = "÷" }, e);
+                    break;
+                case Keys.Enter:
+                    btnEnter.PerformClick();
+                    break;
+                case Keys.Back:
+                    RemoveLastChar(sender, e);
+                    break;
+                case Keys.Escape:
+                    btnClear.PerformClick();
+                    break;
             }
         }
     }

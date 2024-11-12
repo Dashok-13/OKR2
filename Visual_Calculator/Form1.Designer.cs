@@ -32,6 +32,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelTitel = new System.Windows.Forms.Panel();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.CtgButton = new CustomControls.RJControls.RJButton();
+            this.TanButton = new CustomControls.RJControls.RJButton();
+            this.SinButton = new CustomControls.RJControls.RJButton();
+            this.CosButton = new CustomControls.RJControls.RJButton();
             this.BtnPlusMinus = new CustomControls.RJControls.RJButton();
             this.Btn0 = new CustomControls.RJControls.RJButton();
             this.btnEnter = new CustomControls.RJControls.RJButton();
@@ -119,6 +123,90 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // CtgButton
+            // 
+            this.CtgButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CtgButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CtgButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.CtgButton.BorderRadius = 15;
+            this.CtgButton.BorderSize = 0;
+            this.CtgButton.FlatAppearance.BorderSize = 0;
+            this.CtgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CtgButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CtgButton.ForeColor = System.Drawing.Color.White;
+            this.CtgButton.Location = new System.Drawing.Point(258, 150);
+            this.CtgButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CtgButton.Name = "CtgButton";
+            this.CtgButton.Size = new System.Drawing.Size(85, 36);
+            this.CtgButton.TabIndex = 56;
+            this.CtgButton.Text = "Ctg";
+            this.CtgButton.TextColor = System.Drawing.Color.White;
+            this.CtgButton.UseVisualStyleBackColor = false;
+            this.CtgButton.Click += new System.EventHandler(this.CtgButton_Click);
+            // 
+            // TanButton
+            // 
+            this.TanButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.TanButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.TanButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.TanButton.BorderRadius = 15;
+            this.TanButton.BorderSize = 0;
+            this.TanButton.FlatAppearance.BorderSize = 0;
+            this.TanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TanButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TanButton.ForeColor = System.Drawing.Color.White;
+            this.TanButton.Location = new System.Drawing.Point(173, 150);
+            this.TanButton.Margin = new System.Windows.Forms.Padding(0);
+            this.TanButton.Name = "TanButton";
+            this.TanButton.Size = new System.Drawing.Size(85, 36);
+            this.TanButton.TabIndex = 55;
+            this.TanButton.Text = "Tg";
+            this.TanButton.TextColor = System.Drawing.Color.White;
+            this.TanButton.UseVisualStyleBackColor = false;
+            this.TanButton.Click += new System.EventHandler(this.TanButton_Click);
+            // 
+            // SinButton
+            // 
+            this.SinButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SinButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SinButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.SinButton.BorderRadius = 15;
+            this.SinButton.BorderSize = 0;
+            this.SinButton.FlatAppearance.BorderSize = 0;
+            this.SinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SinButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SinButton.ForeColor = System.Drawing.Color.White;
+            this.SinButton.Location = new System.Drawing.Point(89, 150);
+            this.SinButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SinButton.Name = "SinButton";
+            this.SinButton.Size = new System.Drawing.Size(85, 36);
+            this.SinButton.TabIndex = 54;
+            this.SinButton.Text = "Sin";
+            this.SinButton.TextColor = System.Drawing.Color.White;
+            this.SinButton.UseVisualStyleBackColor = false;
+            this.SinButton.Click += new System.EventHandler(this.SinButton_Click);
+            // 
+            // CosButton
+            // 
+            this.CosButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CosButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CosButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.CosButton.BorderRadius = 15;
+            this.CosButton.BorderSize = 0;
+            this.CosButton.FlatAppearance.BorderSize = 0;
+            this.CosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CosButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CosButton.ForeColor = System.Drawing.Color.White;
+            this.CosButton.Location = new System.Drawing.Point(4, 150);
+            this.CosButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CosButton.Name = "CosButton";
+            this.CosButton.Size = new System.Drawing.Size(85, 36);
+            this.CosButton.TabIndex = 53;
+            this.CosButton.Text = "Cos";
+            this.CosButton.TextColor = System.Drawing.Color.White;
+            this.CosButton.UseVisualStyleBackColor = false;
+            this.CosButton.Click += new System.EventHandler(this.CosButton_Click);
+            // 
             // BtnPlusMinus
             // 
             this.BtnPlusMinus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
@@ -201,11 +289,7 @@
             this.Btn23.Text = ",";
             this.Btn23.TextColor = System.Drawing.Color.White;
             this.Btn23.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
             this.Btn23.Click += new System.EventHandler(this.btnDigit);
-=======
-            this.Btn23.Click += new System.EventHandler(this.Btn23_Click);
->>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
             // 
             // Btn1
             // 
@@ -478,11 +562,7 @@
             this.Btn5_.Text = "⅟x";
             this.Btn5_.TextColor = System.Drawing.Color.White;
             this.Btn5_.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
             this.Btn5_.Click += new System.EventHandler(this.Btn1__Click);
-=======
-            this.Btn5_.Click += new System.EventHandler(this.Btn5__Click);
->>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
             // 
             // Btn6_
             // 
@@ -545,11 +625,7 @@
             this.Btn_.Text = "²√x";
             this.Btn_.TextColor = System.Drawing.Color.White;
             this.Btn_.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
             this.Btn_.Click += new System.EventHandler(this.Btn1__Click);
-=======
-            this.Btn_.Click += new System.EventHandler(this.Btn__Click);
->>>>>>> e0c89154ff568a93d260b8a98ba400e7192a50bd
             // 
             // Btn1_
             // 
@@ -646,6 +722,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(350, 570);
+            this.Controls.Add(this.CtgButton);
+            this.Controls.Add(this.TanButton);
+            this.Controls.Add(this.SinButton);
+            this.Controls.Add(this.CosButton);
             this.Controls.Add(this.BtnPlusMinus);
             this.Controls.Add(this.Btn0);
             this.Controls.Add(this.btnEnter);
@@ -716,6 +796,10 @@
         private CustomControls.RJControls.RJButton Btn2_;
         private CustomControls.RJControls.RJButton btnBackSpace;
         private CustomControls.RJControls.RJButton btnClear;
+        private CustomControls.RJControls.RJButton CtgButton;
+        private CustomControls.RJControls.RJButton TanButton;
+        private CustomControls.RJControls.RJButton SinButton;
+        private CustomControls.RJControls.RJButton CosButton;
     }
 }
 
