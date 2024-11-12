@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -21,22 +22,28 @@ namespace Visual_Calculator
             if (textBox1.Text != "")
                 fstval = Double.Parse(textBox1.Text);
 
-            if (result != 0) btnEnter.PerformClick();
-            else result = Double.Parse(textBox1.Text);
+            if (result != 0 && operation != string.Empty) 
+                btnEnter.PerformClick();
+            else
+            { 
+                result = Double.Parse(textBox1.Text);
+            }
 
             Button button = (Button)sender;
             operation = button.Text;
             enterValue = true;
 
-            textBox2.Text = fstNum = $"{result} {operation}";
-            textBox1.Text = string.Empty;
-
+            
+                textBox2.Text = fstNum = $"{result} {operation}";
+                textBox1.Text = string.Empty;
+            
+            
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
             textBox2.Text = "";
-
+            secNum = textBox1.Text;
 
             if (textBox1.Text != string.Empty)
             {
@@ -52,14 +59,18 @@ namespace Visual_Calculator
                         case "+":
                             textBox2.Text = $"{fstval} {operation}{textBox1.Text}";
                             textBox1.Text = (result + num).ToString();
+                            RtBoxDisplayHistory.AppendText($"{fstNum}{secNum}={textBox1.Text}\n");
                             break;
                         case "-":
                             textBox2.Text = $"{fstval} {operation} {textBox1.Text}";
                             textBox1.Text = (result - num).ToString();
+                            RtBoxDisplayHistory.AppendText($"{fstNum}{secNum}={textBox1.Text}\n");
+
                             break;
                         case "×":
                             textBox2.Text = $"{fstval} {operation}{textBox1.Text}";
                             textBox1.Text = (result * num).ToString();
+                            RtBoxDisplayHistory.AppendText($"{fstNum}{secNum}={textBox1.Text}\n");
                             break;
                         case "÷":
                             if (num == 0)
@@ -70,6 +81,7 @@ namespace Visual_Calculator
                             }
                             textBox2.Text = $"{fstval} {operation}{textBox1.Text}";
                             textBox1.Text = (result / num).ToString();
+                            RtBoxDisplayHistory.AppendText($"{fstNum}{secNum}={textBox1.Text}\n");
                             break;
 
                         default:
@@ -145,6 +157,66 @@ namespace Visual_Calculator
             textBox1.Text = "0";
 
         }
+
+        private void buttonHistory_Click(object sender, EventArgs e)
+        {
+            panelHistory.Height = (panelHistory.Height == 0) ? panelHistory.Height = 400 : 0;
+        }
+
+        private void buttonClearHistory_Click(object sender, EventArgs e)
+        {
+            RtBoxDisplayHistory.Clear();
+            if (RtBoxDisplayHistory.Text == string.Empty) RtBoxDisplayHistory.Text = "";
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string rawText = textBox1.Text.Replace(" ", "");
+            if (rawText.Length > 23)
+            {
+                rawText = rawText.Substring(0, 23);
+                textBox1.Text = FormatWithSpaces(rawText);
+                textBox1.SelectionStart = textBox1.Text.Length;
+                return;
+            }
+
+            textBox1.Text = FormatWithSpaces(rawText);
+            textBox1.SelectionStart = textBox1.Text.Length;
+            AdjustFontSize();
+        }
+
+        private string FormatWithSpaces(string input)
+        {
+            if (string.IsNullOrEmpty(input)) return string.Empty;
+            var parts = Enumerable.Range(0, input.Length / 3 + (input.Length % 3 == 0 ? 0 : 1))
+                                  .Select(i => input.Substring(Math.Max(0, input.Length - (i + 1) * 3), Math.Min(3, input.Length - i * 3)))
+                                  .Reverse();
+            return string.Join(" ", parts);
+        }
+
+        private void AdjustFontSize()
+        {
+            int length = textBox1.Text.Replace(" ", "").Length;
+
+            float minFontSize = 16;
+            float maxFontSize = 30;
+            float fontSize = maxFontSize;
+
+            if (length < 10)
+                fontSize = maxFontSize;
+            else if (length < 20)
+                fontSize = 24;
+            else if (length < 30)
+                fontSize = 20;
+            else
+                fontSize = minFontSize;
+
+            textBox1.Font = new Font(textBox1.Font.FontFamily, fontSize);
+
+        }
+
+       
 
         private void BtnPlusMinus_Click(object sender, EventArgs e)
         {
