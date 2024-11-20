@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomControls.RJControls;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -19,6 +20,23 @@ namespace Visual_Calculator
         string operation = string.Empty, operation2 = string.Empty;
         string fstNum, secNum;
         bool enterValue = false;
+        double memoryValue = 0;
+
+
+        private double GetDisplayValue()
+        {
+            double displayValue = 0;
+            if (double.TryParse(textBox1.Text, out displayValue))
+            {
+                return displayValue;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+
 
         private void AdditionButton(object sender, EventArgs e)
         {
@@ -299,13 +317,13 @@ namespace Visual_Calculator
             }
         }
 
-        private void SinButton_Click_1(object sender, EventArgs e)
+        private void SinButton_Click(object sender, EventArgs e)
         {
             try
             {
                 double value = Double.Parse(textBox1.Text);
                 textBox2.Text = $"sin({value})";
-                textBox1.Text = Math.Sin(value * Math.PI / 180).ToString();
+                textBox1.Text = Math.Sin(value * Math.PI / 180).ToString(); 
             }
             catch (FormatException)
             {
@@ -314,13 +332,13 @@ namespace Visual_Calculator
             }
         }
 
-        private void TanButton_Click_1(object sender, EventArgs e)
+        private void TanButton_Click(object sender, EventArgs e)
         {
             try
             {
                 double value = Double.Parse(textBox1.Text);
                 textBox2.Text = $"tan({value})";
-                textBox1.Text = Math.Tan(value * Math.PI / 180).ToString();
+                textBox1.Text = Math.Tan(value * Math.PI / 180).ToString(); 
             }
             catch (FormatException)
             {
@@ -329,7 +347,7 @@ namespace Visual_Calculator
             }
         }
 
-        private void CtgButton_Click_1(object sender, EventArgs e)
+        private void CtgButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -338,13 +356,48 @@ namespace Visual_Calculator
                 if (Math.Tan(value * Math.PI / 180) != 0)
                     textBox1.Text = (1 / Math.Tan(value * Math.PI / 180)).ToString();
                 else
-                    textBox1.Text = "Undefined";
+                    textBox1.Text = "Undefined"; 
             }
             catch (FormatException)
             {
                 textBox1.Text = "Invalid input!";
                 textBox2.Text = string.Empty;
             }
+        }
+
+        
+private void button1_Click(object sender, EventArgs e)
+        {
+            if(button1.Text == "⇛")
+            {
+                button1.Text = "⇚";
+                panel2.Visible = true;
+            }
+            else
+            {
+                button1.Text = "⇛";
+                panel2.Visible = false;
+            }
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            memoryValue += GetDisplayValue(); MessageBox.Show($"До пам'яті додано: {GetDisplayValue()}");
+        }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+            memoryValue -= GetDisplayValue(); MessageBox.Show($"З пам'яті віднято: {GetDisplayValue()}");
+        }
+
+        private void rjButton4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = memoryValue.ToString();
+        }
+
+        private void rjButton3_Click(object sender, EventArgs e)
+        {
+            memoryValue = 0; MessageBox.Show("Пам'ять очищено");
         }
 
         private void btnDigit(object sender, EventArgs e)
