@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCalculator));
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelTitel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonHistory = new System.Windows.Forms.Button();
@@ -91,6 +92,7 @@
             // panelTitel
             // 
             this.panelTitel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelTitel.Controls.Add(this.button1);
             this.panelTitel.Controls.Add(this.buttonExit);
             this.panelTitel.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitel.Location = new System.Drawing.Point(0, 0);
@@ -98,6 +100,21 @@
             this.panelTitel.Name = "panelTitel";
             this.panelTitel.Size = new System.Drawing.Size(350, 40);
             this.panelTitel.TabIndex = 21;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::Visual_Calculator.Properties.Resources.light;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Visual_Calculator.Properties.Resources.light;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(41, 40);
+            this.button1.TabIndex = 61;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // buttonExit
             // 
@@ -749,6 +766,7 @@
             this.SinButton.Text = "Sin";
             this.SinButton.TextColor = System.Drawing.Color.White;
             this.SinButton.UseVisualStyleBackColor = false;
+            this.SinButton.Click += new System.EventHandler(this.SinButton_Click_1);
             // 
             // CtgButton
             // 
@@ -769,6 +787,7 @@
             this.CtgButton.Text = "Ctg";
             this.CtgButton.TextColor = System.Drawing.Color.White;
             this.CtgButton.UseVisualStyleBackColor = false;
+            this.CtgButton.Click += new System.EventHandler(this.CtgButton_Click_1);
             // 
             // TanButton
             // 
@@ -789,6 +808,7 @@
             this.TanButton.Text = "Tg";
             this.TanButton.TextColor = System.Drawing.Color.White;
             this.TanButton.UseVisualStyleBackColor = false;
+            this.TanButton.Click += new System.EventHandler(this.TanButton_Click_1);
             // 
             // FrmCalculator
             // 
@@ -883,6 +903,7 @@
         private CustomControls.RJControls.RJButton SinButton;
         private CustomControls.RJControls.RJButton CtgButton;
         private CustomControls.RJControls.RJButton TanButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -299,13 +299,13 @@ namespace Visual_Calculator
             }
         }
 
-        private void SinButton_Click(object sender, EventArgs e)
+        private void SinButton_Click_1(object sender, EventArgs e)
         {
             try
             {
                 double value = Double.Parse(textBox1.Text);
                 textBox2.Text = $"sin({value})";
-                textBox1.Text = Math.Sin(value * Math.PI / 180).ToString(); 
+                textBox1.Text = Math.Sin(value * Math.PI / 180).ToString();
             }
             catch (FormatException)
             {
@@ -314,13 +314,13 @@ namespace Visual_Calculator
             }
         }
 
-        private void TanButton_Click(object sender, EventArgs e)
+        private void TanButton_Click_1(object sender, EventArgs e)
         {
             try
             {
                 double value = Double.Parse(textBox1.Text);
                 textBox2.Text = $"tan({value})";
-                textBox1.Text = Math.Tan(value * Math.PI / 180).ToString(); 
+                textBox1.Text = Math.Tan(value * Math.PI / 180).ToString();
             }
             catch (FormatException)
             {
@@ -329,7 +329,7 @@ namespace Visual_Calculator
             }
         }
 
-        private void CtgButton_Click(object sender, EventArgs e)
+        private void CtgButton_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -338,7 +338,7 @@ namespace Visual_Calculator
                 if (Math.Tan(value * Math.PI / 180) != 0)
                     textBox1.Text = (1 / Math.Tan(value * Math.PI / 180)).ToString();
                 else
-                    textBox1.Text = "Undefined"; 
+                    textBox1.Text = "Undefined";
             }
             catch (FormatException)
             {
@@ -346,7 +346,6 @@ namespace Visual_Calculator
                 textBox2.Text = string.Empty;
             }
         }
-
 
         private void btnDigit(object sender, EventArgs e)
         {
