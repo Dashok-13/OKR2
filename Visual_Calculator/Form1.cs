@@ -400,6 +400,88 @@ private void button1_Click(object sender, EventArgs e)
             memoryValue = 0; MessageBox.Show("Пам'ять очищено");
         }
 
+        private bool isDarkTheme = true;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (isDarkTheme)
+            {
+                // Світла тема
+                this.BackColor = Color.White; 
+                SetButtonColors(Color.Gainsboro, Color.WhiteSmoke, Color.LightGray, Color.Black, Color.LightGray); 
+                SetPanelColors(Color.White); 
+                //SetOtherControlsColors(Color.White); // Колір button1, button2
+                SetTextBoxColors(Color.Black, Color.White); 
+            }
+            else
+            {
+                // Темна тема
+                this.BackColor = Color.FromArgb(32, 32, 32);
+                SetButtonColors(Color.FromArgb(70, 70, 70), Color.FromArgb(70, 70, 70), Color.FromArgb(32, 32, 32), Color.White, Color.FromArgb(50, 50, 50)); 
+                SetPanelColors(Color.FromArgb(32, 32, 32)); 
+                //SetOtherControlsColors(Color.FromArgb(32, 32, 32)); // Колір button1, button2
+                SetTextBoxColors(Color.White, Color.FromArgb(32, 32, 32)); 
+            }
+
+            isDarkTheme = !isDarkTheme;
+        }
+
+
+        private void SetButtonColors(Color backColor, Color backgroundColor, Color borderColor, Color textColor, Color otherButtonColor)
+        {
+
+            var mainButtons = new[] { Btn0, Btn1, Btn2, Btn3, Bnt4, Btn5, Btn6, Btn7, Btn8, Btn9, Btn23, BtnPlusMinus };
+           
+            var otherButtons = new[] { btnAdd, btnMinus, btnMultiplicate, btnDivide, Btn_, Btn6_, Btn5_, Btn1_, Btn2_, btnClear, btnBackSpace, rjButton3, rjButton4, rjButton2, rjButton1, CtgButton, TanButton, CosButton, SinButton };
+
+            
+            foreach (var button in mainButtons)
+            {
+                if (button != null) 
+                {
+                    button.BackColor = backColor;
+                    button.BackgroundColor = backgroundColor;
+                    button.BorderColor = borderColor;
+                    button.ForeColor = textColor; 
+                }
+            }
+
+            foreach (var button in otherButtons)
+            {
+                if (button != null) 
+                {
+                    button.BackColor = otherButtonColor;
+                    button.BackgroundColor = otherButtonColor;
+                    button.BorderColor = borderColor;
+                    button.ForeColor = textColor;
+                }
+            }
+        }
+
+        private void SetPanelColors(Color panelColor)
+        {
+            panel1.BackColor = panelColor;
+            panel2.BackColor = panelColor;
+        }
+
+        // Метод для зміни кольорів button1 та button2
+        private void SetOtherControlsColors(Color controlColor)
+        {
+            //button1.BackColor = controlColor;
+            //button2.BackColor = controlColor;
+        }
+
+
+        private void SetTextBoxColors(Color textColor, Color backColor)
+        {
+            textBox1.ForeColor = textColor;
+            textBox1.BackColor = backColor;
+
+            textBox2.ForeColor = textColor;
+            textBox2.BackColor = backColor;
+        }
+
+
         private void btnDigit(object sender, EventArgs e)
         {
             if (textBox1.Text == "0" || enterValue)
