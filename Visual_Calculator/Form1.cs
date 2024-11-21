@@ -11,6 +11,12 @@ namespace Visual_Calculator
         public FrmCalculator()
         {
             InitializeComponent();
+
+            toolTip1.SetToolTip(rjButton1, "Додати значення до пам'яті");
+            toolTip1.SetToolTip(rjButton2, "Відняти значення з пам'яті");
+            toolTip1.SetToolTip(rjButton3, "Очистити пам'ять");
+            toolTip1.SetToolTip(rjButton4, "Виводить що збережене у пам'яті");
+
             this.KeyPreview = true;
             this.KeyPress += FrmCalculator_KeyPress;
             this.KeyDown += FrmCalculator_KeyDown;
@@ -484,34 +490,51 @@ private void button1_Click(object sender, EventArgs e)
 
         private void btnDigit(object sender, EventArgs e)
         {
+            Button button = (Button)sender;
+
+            if (button.Text == ",")
+            {
+                if (!textBox1.Text.Contains(","))
+                {
+                    if (textBox1.Text == "0")
+                    {
+                        textBox1.Text += ","; 
+                    }
+                    else
+                    {
+                        textBox1.Text += ","; 
+                    }
+                }
+                return; 
+            }
+
             if (textBox1.Text == "0" || enterValue)
             {
-                textBox1.Text = string.Empty;
+                textBox1.Text = string.Empty; 
                 enterValue = false;
             }
 
-            Button button = (Button)sender;
-            if (button.Text == ".")
-            {
-                if (!textBox1.Text.Contains("."))
-                    textBox1.Text += button.Text;
-            }
-            else
-            {
-                textBox1.Text += button.Text;
-            }
+            textBox1.Text += button.Text;
         }
         private void FrmCalculator_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar) || e.KeyChar == '.')
+            if (char.IsDigit(e.KeyChar) || e.KeyChar == ',')
             {
                 if (textBox1.Text == "0" || enterValue)
                 {
-                    textBox1.Text = string.Empty;
+                    if (e.KeyChar == ',')
+                    {
+                        textBox1.Text = "0,";
+                        enterValue = false;
+                        e.Handled = true;
+                        return;
+                    }
+
+                    textBox1.Text = string.Empty; 
                     enterValue = false;
                 }
 
-                if (e.KeyChar == '.' && !textBox1.Text.Contains("."))
+                if (e.KeyChar == ',' && !textBox1.Text.Contains(","))
                 {
                     textBox1.Text += e.KeyChar;
                 }
