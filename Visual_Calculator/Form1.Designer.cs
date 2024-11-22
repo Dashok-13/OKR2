@@ -28,14 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCalculator));
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelTitel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.CtgButton = new CustomControls.RJControls.RJButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonHistory = new System.Windows.Forms.Button();
+            this.panelHistory = new System.Windows.Forms.Panel();
+            this.RtBoxDisplayHistory = new System.Windows.Forms.RichTextBox();
+            this.buttonClearHistory = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.TanButton = new CustomControls.RJControls.RJButton();
-            this.SinButton = new CustomControls.RJControls.RJButton();
             this.CosButton = new CustomControls.RJControls.RJButton();
+            this.CtgButton = new CustomControls.RJControls.RJButton();
+            this.SinButton = new CustomControls.RJControls.RJButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.rjButton2 = new CustomControls.RJControls.RJButton();
+            this.rjButton3 = new CustomControls.RJControls.RJButton();
+            this.rjButton4 = new CustomControls.RJControls.RJButton();
             this.BtnPlusMinus = new CustomControls.RJControls.RJButton();
             this.Btn0 = new CustomControls.RJControls.RJButton();
             this.btnEnter = new CustomControls.RJControls.RJButton();
@@ -62,24 +77,10 @@
             this.btnClear = new CustomControls.RJControls.RJButton();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             this.panelTitel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelHistory.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Gadugi", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.Location = new System.Drawing.Point(0, 65);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(350, 82);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox2
             // 
@@ -89,7 +90,7 @@
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Gadugi", 14F);
             this.textBox2.ForeColor = System.Drawing.Color.Silver;
-            this.textBox2.Location = new System.Drawing.Point(0, 40);
+            this.textBox2.Location = new System.Drawing.Point(0, 80);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -100,6 +101,8 @@
             // panelTitel
             // 
             this.panelTitel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelTitel.Controls.Add(this.button2);
+            this.panelTitel.Controls.Add(this.button1);
             this.panelTitel.Controls.Add(this.buttonExit);
             this.panelTitel.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitel.Location = new System.Drawing.Point(0, 0);
@@ -107,6 +110,38 @@
             this.panelTitel.Name = "panelTitel";
             this.panelTitel.Size = new System.Drawing.Size(350, 40);
             this.panelTitel.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(50, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 40);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "🔆";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 40);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "⇛";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonExit
             // 
@@ -123,26 +158,105 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // CtgButton
+            // panel1
             // 
-            this.CtgButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.CtgButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.CtgButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.CtgButton.BorderRadius = 15;
-            this.CtgButton.BorderSize = 0;
-            this.CtgButton.FlatAppearance.BorderSize = 0;
-            this.CtgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CtgButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CtgButton.ForeColor = System.Drawing.Color.White;
-            this.CtgButton.Location = new System.Drawing.Point(258, 150);
-            this.CtgButton.Margin = new System.Windows.Forms.Padding(0);
-            this.CtgButton.Name = "CtgButton";
-            this.CtgButton.Size = new System.Drawing.Size(85, 36);
-            this.CtgButton.TabIndex = 56;
-            this.CtgButton.Text = "Ctg";
-            this.CtgButton.TextColor = System.Drawing.Color.White;
-            this.CtgButton.UseVisualStyleBackColor = false;
-            this.CtgButton.Click += new System.EventHandler(this.CtgButton_Click);
+            this.panel1.Controls.Add(this.buttonHistory);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 40);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(350, 40);
+            this.panel1.TabIndex = 54;
+            // 
+            // buttonHistory
+            // 
+            this.buttonHistory.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonHistory.BackgroundImage")));
+            this.buttonHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonHistory.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonHistory.FlatAppearance.BorderSize = 0;
+            this.buttonHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHistory.Location = new System.Drawing.Point(300, 0);
+            this.buttonHistory.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonHistory.Name = "buttonHistory";
+            this.buttonHistory.Size = new System.Drawing.Size(50, 40);
+            this.buttonHistory.TabIndex = 0;
+            this.buttonHistory.UseVisualStyleBackColor = true;
+            this.buttonHistory.Click += new System.EventHandler(this.buttonHistory_Click);
+            // 
+            // panelHistory
+            // 
+            this.panelHistory.Controls.Add(this.RtBoxDisplayHistory);
+            this.panelHistory.Controls.Add(this.buttonClearHistory);
+            this.panelHistory.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelHistory.Location = new System.Drawing.Point(0, 570);
+            this.panelHistory.Margin = new System.Windows.Forms.Padding(0);
+            this.panelHistory.Name = "panelHistory";
+            this.panelHistory.Size = new System.Drawing.Size(350, 0);
+            this.panelHistory.TabIndex = 55;
+            // 
+            // RtBoxDisplayHistory
+            // 
+            this.RtBoxDisplayHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.RtBoxDisplayHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RtBoxDisplayHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RtBoxDisplayHistory.Font = new System.Drawing.Font("Calibri", 18F);
+            this.RtBoxDisplayHistory.ForeColor = System.Drawing.Color.Silver;
+            this.RtBoxDisplayHistory.Location = new System.Drawing.Point(0, 0);
+            this.RtBoxDisplayHistory.Margin = new System.Windows.Forms.Padding(0);
+            this.RtBoxDisplayHistory.Name = "RtBoxDisplayHistory";
+            this.RtBoxDisplayHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.RtBoxDisplayHistory.Size = new System.Drawing.Size(350, 0);
+            this.RtBoxDisplayHistory.TabIndex = 1;
+            this.RtBoxDisplayHistory.Text = "";
+            // 
+            // buttonClearHistory
+            // 
+            this.buttonClearHistory.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonClearHistory.FlatAppearance.BorderSize = 0;
+            this.buttonClearHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonClearHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClearHistory.Font = new System.Drawing.Font("Gadugi", 20F);
+            this.buttonClearHistory.ForeColor = System.Drawing.Color.White;
+            this.buttonClearHistory.Location = new System.Drawing.Point(0, -40);
+            this.buttonClearHistory.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonClearHistory.Name = "buttonClearHistory";
+            this.buttonClearHistory.Size = new System.Drawing.Size(350, 40);
+            this.buttonClearHistory.TabIndex = 3;
+            this.buttonClearHistory.Text = "🗑️";
+            this.buttonClearHistory.UseVisualStyleBackColor = true;
+            this.buttonClearHistory.Click += new System.EventHandler(this.buttonClearHistory_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox1.Font = new System.Drawing.Font("Gadugi", 30F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox1.Location = new System.Drawing.Point(0, 105);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(350, 50);
+            this.textBox1.TabIndex = 56;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panel2.Controls.Add(this.TanButton);
+            this.panel2.Controls.Add(this.CosButton);
+            this.panel2.Controls.Add(this.CtgButton);
+            this.panel2.Controls.Add(this.SinButton);
+            this.panel2.Location = new System.Drawing.Point(0, 43);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(185, 102);
+            this.panel2.TabIndex = 61;
+            this.panel2.Visible = false;
             // 
             // TanButton
             // 
@@ -155,36 +269,15 @@
             this.TanButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TanButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TanButton.ForeColor = System.Drawing.Color.White;
-            this.TanButton.Location = new System.Drawing.Point(173, 150);
+            this.TanButton.Location = new System.Drawing.Point(94, 6);
             this.TanButton.Margin = new System.Windows.Forms.Padding(0);
             this.TanButton.Name = "TanButton";
-            this.TanButton.Size = new System.Drawing.Size(85, 36);
-            this.TanButton.TabIndex = 55;
+            this.TanButton.Size = new System.Drawing.Size(72, 41);
+            this.TanButton.TabIndex = 57;
             this.TanButton.Text = "Tg";
             this.TanButton.TextColor = System.Drawing.Color.White;
             this.TanButton.UseVisualStyleBackColor = false;
             this.TanButton.Click += new System.EventHandler(this.TanButton_Click);
-            // 
-            // SinButton
-            // 
-            this.SinButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.SinButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.SinButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.SinButton.BorderRadius = 15;
-            this.SinButton.BorderSize = 0;
-            this.SinButton.FlatAppearance.BorderSize = 0;
-            this.SinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SinButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SinButton.ForeColor = System.Drawing.Color.White;
-            this.SinButton.Location = new System.Drawing.Point(89, 150);
-            this.SinButton.Margin = new System.Windows.Forms.Padding(0);
-            this.SinButton.Name = "SinButton";
-            this.SinButton.Size = new System.Drawing.Size(85, 36);
-            this.SinButton.TabIndex = 54;
-            this.SinButton.Text = "Sin";
-            this.SinButton.TextColor = System.Drawing.Color.White;
-            this.SinButton.UseVisualStyleBackColor = false;
-            this.SinButton.Click += new System.EventHandler(this.SinButton_Click);
             // 
             // CosButton
             // 
@@ -197,15 +290,141 @@
             this.CosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CosButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CosButton.ForeColor = System.Drawing.Color.White;
-            this.CosButton.Location = new System.Drawing.Point(4, 150);
+            this.CosButton.Location = new System.Drawing.Point(9, 6);
             this.CosButton.Margin = new System.Windows.Forms.Padding(0);
             this.CosButton.Name = "CosButton";
-            this.CosButton.Size = new System.Drawing.Size(85, 36);
-            this.CosButton.TabIndex = 53;
+            this.CosButton.Size = new System.Drawing.Size(72, 41);
+            this.CosButton.TabIndex = 60;
             this.CosButton.Text = "Cos";
             this.CosButton.TextColor = System.Drawing.Color.White;
             this.CosButton.UseVisualStyleBackColor = false;
             this.CosButton.Click += new System.EventHandler(this.CosButton_Click);
+            // 
+            // CtgButton
+            // 
+            this.CtgButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CtgButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.CtgButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.CtgButton.BorderRadius = 15;
+            this.CtgButton.BorderSize = 0;
+            this.CtgButton.FlatAppearance.BorderSize = 0;
+            this.CtgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CtgButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CtgButton.ForeColor = System.Drawing.Color.White;
+            this.CtgButton.Location = new System.Drawing.Point(95, 47);
+            this.CtgButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CtgButton.Name = "CtgButton";
+            this.CtgButton.Size = new System.Drawing.Size(72, 41);
+            this.CtgButton.TabIndex = 58;
+            this.CtgButton.Text = "Ctg";
+            this.CtgButton.TextColor = System.Drawing.Color.White;
+            this.CtgButton.UseVisualStyleBackColor = false;
+            this.CtgButton.Click += new System.EventHandler(this.CtgButton_Click);
+            // 
+            // SinButton
+            // 
+            this.SinButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SinButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SinButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.SinButton.BorderRadius = 15;
+            this.SinButton.BorderSize = 0;
+            this.SinButton.FlatAppearance.BorderSize = 0;
+            this.SinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SinButton.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SinButton.ForeColor = System.Drawing.Color.White;
+            this.SinButton.Location = new System.Drawing.Point(10, 47);
+            this.SinButton.Margin = new System.Windows.Forms.Padding(0);
+            this.SinButton.Name = "SinButton";
+            this.SinButton.Size = new System.Drawing.Size(72, 41);
+            this.SinButton.TabIndex = 59;
+            this.SinButton.Text = "Sin";
+            this.SinButton.TextColor = System.Drawing.Color.White;
+            this.SinButton.UseVisualStyleBackColor = false;
+            this.SinButton.Click += new System.EventHandler(this.SinButton_Click);
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.rjButton1.BorderRadius = 15;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(4, 155);
+            this.rjButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(85, 31);
+            this.rjButton1.TabIndex = 65;
+            this.rjButton1.Text = "M+";
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.rjButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.rjButton2.BorderRadius = 15;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Location = new System.Drawing.Point(89, 155);
+            this.rjButton2.Margin = new System.Windows.Forms.Padding(0);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(85, 31);
+            this.rjButton2.TabIndex = 64;
+            this.rjButton2.Text = "M-";
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
+            // 
+            // rjButton3
+            // 
+            this.rjButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.rjButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.rjButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.rjButton3.BorderRadius = 15;
+            this.rjButton3.BorderSize = 0;
+            this.rjButton3.FlatAppearance.BorderSize = 0;
+            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton3.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton3.ForeColor = System.Drawing.Color.White;
+            this.rjButton3.Location = new System.Drawing.Point(259, 155);
+            this.rjButton3.Margin = new System.Windows.Forms.Padding(0);
+            this.rjButton3.Name = "rjButton3";
+            this.rjButton3.Size = new System.Drawing.Size(85, 31);
+            this.rjButton3.TabIndex = 63;
+            this.rjButton3.Text = "MC";
+            this.rjButton3.TextColor = System.Drawing.Color.White;
+            this.rjButton3.UseVisualStyleBackColor = false;
+            this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);
+            // 
+            // rjButton4
+            // 
+            this.rjButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.rjButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.rjButton4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.rjButton4.BorderRadius = 15;
+            this.rjButton4.BorderSize = 0;
+            this.rjButton4.FlatAppearance.BorderSize = 0;
+            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton4.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton4.ForeColor = System.Drawing.Color.White;
+            this.rjButton4.Location = new System.Drawing.Point(174, 155);
+            this.rjButton4.Margin = new System.Windows.Forms.Padding(0);
+            this.rjButton4.Name = "rjButton4";
+            this.rjButton4.Size = new System.Drawing.Size(85, 31);
+            this.rjButton4.TabIndex = 62;
+            this.rjButton4.Text = "MR";
+            this.rjButton4.TextColor = System.Drawing.Color.White;
+            this.rjButton4.UseVisualStyleBackColor = false;
+            this.rjButton4.Click += new System.EventHandler(this.rjButton4_Click);
             // 
             // BtnPlusMinus
             // 
@@ -281,7 +500,7 @@
             this.Btn23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn23.Font = new System.Drawing.Font("Gadugi", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn23.ForeColor = System.Drawing.Color.White;
-            this.Btn23.Location = new System.Drawing.Point(173, 486);
+            this.Btn23.Location = new System.Drawing.Point(174, 486);
             this.Btn23.Margin = new System.Windows.Forms.Padding(0);
             this.Btn23.Name = "Btn23";
             this.Btn23.Size = new System.Drawing.Size(85, 60);
@@ -722,10 +941,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(350, 570);
-            this.Controls.Add(this.CtgButton);
-            this.Controls.Add(this.TanButton);
-            this.Controls.Add(this.SinButton);
-            this.Controls.Add(this.CosButton);
+            this.Controls.Add(this.rjButton1);
+            this.Controls.Add(this.rjButton2);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.rjButton3);
+            this.Controls.Add(this.rjButton4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panelHistory);
             this.Controls.Add(this.BtnPlusMinus);
             this.Controls.Add(this.Btn0);
             this.Controls.Add(this.btnEnter);
@@ -750,24 +972,26 @@
             this.Controls.Add(this.Btn2_);
             this.Controls.Add(this.btnBackSpace);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitel);
             this.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.Name = "FrmCalculator";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.panelTitel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panelHistory.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private ElipseToolDemo.ElipseControl elipseControl1;
         private System.Windows.Forms.Panel panelTitel;
@@ -796,10 +1020,24 @@
         private CustomControls.RJControls.RJButton Btn2_;
         private CustomControls.RJControls.RJButton btnBackSpace;
         private CustomControls.RJControls.RJButton btnClear;
+        private System.Windows.Forms.Panel panelHistory;
+        private System.Windows.Forms.RichTextBox RtBoxDisplayHistory;
+        private System.Windows.Forms.Button buttonClearHistory;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonHistory;
+        private System.Windows.Forms.TextBox textBox1;
+        private CustomControls.RJControls.RJButton CosButton;
+        private CustomControls.RJControls.RJButton SinButton;
         private CustomControls.RJControls.RJButton CtgButton;
         private CustomControls.RJControls.RJButton TanButton;
-        private CustomControls.RJControls.RJButton SinButton;
-        private CustomControls.RJControls.RJButton CosButton;
+        private System.Windows.Forms.Panel panel2;
+        private CustomControls.RJControls.RJButton rjButton1;
+        private CustomControls.RJControls.RJButton rjButton2;
+        private CustomControls.RJControls.RJButton rjButton3;
+        private CustomControls.RJControls.RJButton rjButton4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
